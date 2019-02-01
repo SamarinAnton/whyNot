@@ -27,9 +27,11 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	runtime('org.springframework.boot:spring-boot-devtools')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('com.vk.api:sdk:0.5.12')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE')
-    compile('javax.xml.bind:jaxb-api')
+//    compile('javax.xml.bind:jaxb-api')
 //    compile('com.sun.xml.bind:jaxb-core')
 //    compile('com.sun.xml.bind:jaxb-impl')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
