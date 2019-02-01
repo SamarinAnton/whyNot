@@ -12,12 +12,67 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+
+                 http
                 .authorizeRequests()
-                .mvcMatchers("/").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .csrf().disable();  // what is token??
+                         .mvcMatchers("/message").authenticated()
+                         .mvcMatchers("/**").permitAll()
+                         .and()
+                .csrf().disable();
+
+//        http
+//                .antMatcher("/**")
+//                .authorizeRequests()
+//                .antMatchers("/", "/login**", "/webjars/**", "/error**")
+//                .permitAll()
+//                .anyRequest()
+//                .authenticated().and().csrf().disable();
+
+
+//        http
+//                .antMatcher("/**")
+//                .authorizeRequests()
+//                .antMatchers("/", "/login**", "/webjars/**", "/error**")
+//                .permitAll()
+//                .anyRequest()
+//                .authenticated().and()
+//                .csrf().disable();
+
+
+//                 http
+//                .authorizeRequests()
+//                         .mvcMatchers("/message").authenticated()
+//                         .mvcMatchers("/**").permitAll()              ??????????????
+//                         .and()
+//                .csrf().disable();
+
+
+
+//                .anyRequest().authenticated();
+//        http.requestMatchers()
+//                .antMatchers("/login**", "/oauth/authorize", "/logout.do")
+//                .and()
+//                .authorizeRequests()
+//                .anyRequest()
+//                .authenticated()
+//                .and()
+//                .formLogin()
+//                .loginPage("/login")
+//                .loginProcessingUrl("/login.do")
+//                .usernameParameter("username")
+//                .passwordParameter("password")/*
+//                .and()
+//                .logout()
+//                .logoutRequestMatcher(new AntPathRequestMatcher("/logout.do"))*/
+//                .permitAll()
+//                .and()
+//                .userDetailsService(userDetailsServiceBean());
+//        http
+//                .authorizeRequests()
+//                .mvcMatchers("/").permitAll()
+//                .anyRequest().authenticated();
+////                .and()
+////                .csrf().disable();  // what is token??
     }
 
 //    @Bean
